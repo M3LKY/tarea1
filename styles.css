@@ -1,0 +1,304 @@
+/* Importación de fuentes desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+/* Definición de variables personalizadas (variables CSS) */
+:root {
+  font-size: 16px;
+  font-family: 'Open Sans';
+  --text-primary: #ffffff;       /* Color de texto primario */
+  --text-secondary: #ffffff;     /* Color de texto secundario */
+  --bg-primary: #23232e;         /* Color de fondo primario */
+  --bg-secondary: #141418;       /* Color de fondo secundario */
+  --transition-speed: 600ms;     /* Velocidad de transición */
+}
+
+/* Estilos generales para el cuerpo (body) de la página */
+body {
+  color: white;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para la barra de desplazamiento del navegador (scrollbar) */
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+/* Estilos para la sección principal (main) */
+main {
+  margin-left: 5rem;
+}
+
+/* Estilos para la barra de navegación (navbar) */
+.navbar {
+  position: fixed;
+  background-color: var(--bg-primary);
+  transition: width 600ms ease;
+  overflow: scroll;
+}
+
+/* Estilos para la lista de elementos de navegación (navbar-nav) */
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+/* Estilos para los elementos de navegación (nav-item) */
+.nav-item {
+  width: 100%;
+}
+
+/* Estilos para el último elemento de navegación */
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+/* Estilos para los enlaces de navegación (nav-link) */
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
+}
+
+/* Estilos al pasar el mouse por encima de los enlaces de navegación */
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+/* Estilos para el texto dentro de los enlaces de navegación */
+.link-text {
+  display: none;
+  margin-left: 1rem;
+}
+
+/* Estilos para los iconos dentro de los enlaces de navegación */
+.nav-link svg {
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+/* Estilos para iconos primarios y secundarios */
+.fa-primary {
+  color: #ff7eee;
+}
+
+.fa-secondary {
+  color: #df49a6;
+}
+
+.fa-primary,
+.fa-secondary {
+  transition: var(--transition-speed);
+}
+
+/* Estilos para el logotipo (logo) */
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
+}
+
+/* Estilos para el logotipo con icono rotativo */
+.logo svg {
+  transform: rotate(0deg);
+  transition: var(--transition-speed);
+}
+
+/* Estilos para el texto del logotipo cuando se desplaza */
+.logo-text {
+  display: inline;
+  position: absolute;
+  left: -999px;
+  transition: var(--transition-speed);
+}
+
+/* Estilos para rotar el icono del logotipo al pasar el mouse por la barra de navegación */
+.navbar:hover .logo svg {
+  transform: rotate(-180deg);
+}
+
+/* Estilos para pantallas pequeñas (máximo 600px de ancho) */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+
+/* Estilos para pantallas grandes (mínimo 600px de ancho) */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+  /* Expande la barra de navegación al pasar el mouse por encima */
+  .navbar:hover {
+    width: 16rem;
+  }
+
+  /* Muestra el texto de enlace al expandir la barra de navegación */
+  .navbar:hover .link-text {
+    display: inline;
+  }
+
+  /* Mueve el icono del logotipo al expandir la barra de navegación */
+  .navbar:hover .logo svg {
+    margin-left: 11rem;
+  }
+
+  /* Muestra el texto del logotipo al expandir la barra de navegación */
+  .navbar:hover .logo-text {
+    left: 0px;
+  }
+}
+
+/* Estilos para el tema oscuro (dark) */
+.dark {
+  --text-primary: #ffffff;
+  --text-secondary: #ffffff;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+}
+
+/* Estilos para el tema claro (light) */
+.light {
+  --text-primary: #1f1f1f;
+  --text-secondary: #000000;
+  --bg-primary: #ffffff;
+  --bg-secondary: #e4e4e4;
+}
+
+/* Estilos para el tema solar */
+.solar {
+  --text-primary: #576e75;
+  --text-secondary: #35535c;
+  --bg-primary: #fdf6e3;
+  --bg-secondary: #f5e5b8;
+}
+
+/* Estilos para los iconos de cambio de tema */
+.theme-icon {
+  display: none;
+}
+
+.dark #darkIcon {
+  display: block;
+}
+
+.light #lightIcon {
+  display: block;
+}
+
+.solar #solarIcon {
+  display: block;
+}
+
+/* Estilos para secciones de contenido */
+section {
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-family: 'Kaushan Script', cursive;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Estilos para encabezados (h2) dentro de secciones principales */
+main section h2 {
+  padding: 60px 0px 0px 210px;
+  font-size: 40px;
+}
+
+/* Estilos para párrafos (p) dentro de secciones principales */
+main section p {
+  font-family: 'Poiret One', cursive;
+  text-align: center;
+  padding-left: 70px;
+  width: 420px;
+  line-height: 1.7;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* Estilos para enlaces (a) dentro de secciones principales */
+main section a {
+  color: rgb(255, 183, 0);
+  text-decoration: none;
+}
+
+/* Estilos al pasar el mouse por encima de enlaces (a) dentro de secciones principales */
+main section a:hover {
+  color: rgb(195, 255, 0);
+}
+
+/* Estilos específicos para la sección 1 */
+#section1 {
+  background-image: url(./images/cat1.png);
+  text-shadow: 2px 2px 4px rgba(191, 0, 255, 0.8);
+}
+
+/* Estilos específicos para la sección 2 */
+#section2 {
+  background-image: url(./images/groot.jpg);
+  text-shadow: 2px 2px 4px rgba(218, 3, 3, 0.8);
+}
+
+/* Estilos específicos para la sección 3 */
+#section3 {
+  background-image: url(./images/space.jpg);
+  text-shadow: 2px 2px 4px rgba(92, 0, 158, 0.8);
+}
+
+/* Estilos específicos para la sección 4 */
+#section4 {
+  background-image: url(./images/rocket.jpg);
+  text-shadow: 2px 2px 4px rgba(151, 151, 1, 0.8);
+}
