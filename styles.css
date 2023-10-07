@@ -279,6 +279,21 @@ main section a:hover {
   color: rgb(195, 255, 0);
 }
 
+@media (max-width: 768px) {
+  main section h2 {
+    text-align: center;
+      padding: 20px;
+      font-size: 30px;
+  }
+
+  main section p {
+      padding: 20px;
+      width: auto;
+      font-size: 14px;
+      font-weight: normal;
+  }
+}
+
 /* Estilos específicos para la sección 1 */
 #section1 {
   background-image: url(./images/cat1.png);
